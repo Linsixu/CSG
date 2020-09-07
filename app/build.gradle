@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "cn.self.csgproject"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -21,6 +21,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    aaptOptions {
+        noCompress "pdf"
+    }
+
+    viewBinding {
+        enabled = true
     }
 }
 
